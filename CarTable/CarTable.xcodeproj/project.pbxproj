@@ -3,24 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3307632403CCB1000F1C2F /* CarsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3307622403CCB1000F1C2F /* CarsManager.swift */; };
 		CE67780623FFD28000C47DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67780523FFD28000C47DBB /* MainViewController.swift */; };
 		CE67780A23FFE38A00C47DBB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67780923FFE38A00C47DBB /* CustomTableViewCell.swift */; };
 		CE67780C23FFF7ED00C47DBB /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67780B23FFF7EC00C47DBB /* CarModel.swift */; };
+		CE67780E24000CA700C47DBB /* NewCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67780D24000CA700C47DBB /* NewCarViewController.swift */; };
 		CE6D9B4023FE9C02000450AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D9B3F23FE9C02000450AA /* AppDelegate.swift */; };
 		CE6D9B4723FE9C02000450AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D9B4523FE9C02000450AA /* Main.storyboard */; };
 		CE6D9B4923FE9C08000450AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6D9B4823FE9C08000450AA /* Assets.xcassets */; };
 		CE6D9B4C23FE9C08000450AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6D9B4A23FE9C08000450AA /* LaunchScreen.storyboard */; };
 		CE6D9B5623FFD1AA000450AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D9B5523FFD1AA000450AA /* SceneDelegate.swift */; };
+		DE054B5DB7E08160B2F1E761 /* Pods_CarTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7601AB6FC0211667C7D7A5CF /* Pods_CarTable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7601AB6FC0211667C7D7A5CF /* Pods_CarTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A0F91E11C5152B38156C9A9 /* Pods-CarTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTable.release.xcconfig"; path = "Target Support Files/Pods-CarTable/Pods-CarTable.release.xcconfig"; sourceTree = "<group>"; };
+		CE3307622403CCB1000F1C2F /* CarsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsManager.swift; sourceTree = "<group>"; };
 		CE67780523FFD28000C47DBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE67780923FFE38A00C47DBB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE67780B23FFF7EC00C47DBB /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		CE67780D24000CA700C47DBB /* NewCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarViewController.swift; sourceTree = "<group>"; };
 		CE6D9B3C23FE9C02000450AA /* CarTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6D9B3F23FE9C02000450AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6D9B4623FE9C02000450AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +35,7 @@
 		CE6D9B4B23FE9C08000450AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6D9B4D23FE9C08000450AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6D9B5523FFD1AA000450AA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E6534E47B466CBF9BBA1A7D0 /* Pods-CarTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarTable.debug.xcconfig"; path = "Target Support Files/Pods-CarTable/Pods-CarTable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE054B5DB7E08160B2F1E761 /* Pods_CarTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BF7B0E88E52B93ABD4D0E69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7601AB6FC0211667C7D7A5CF /* Pods_CarTable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C05F9CA3469CF3947FE10918 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6534E47B466CBF9BBA1A7D0 /* Pods-CarTable.debug.xcconfig */,
+				7A0F91E11C5152B38156C9A9 /* Pods-CarTable.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE6D9B3323FE9C01000450AA = {
 			isa = PBXGroup;
 			children = (
 				CE6D9B3E23FE9C02000450AA /* CarTable */,
 				CE6D9B3D23FE9C02000450AA /* Products */,
+				C05F9CA3469CF3947FE10918 /* Pods */,
+				6BF7B0E88E52B93ABD4D0E69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +91,10 @@
 				CE6D9B3F23FE9C02000450AA /* AppDelegate.swift */,
 				CE6D9B5523FFD1AA000450AA /* SceneDelegate.swift */,
 				CE67780B23FFF7EC00C47DBB /* CarModel.swift */,
-				CE67780523FFD28000C47DBB /* MainViewController.swift */,
+				CE3307622403CCB1000F1C2F /* CarsManager.swift */,
 				CE67780923FFE38A00C47DBB /* CustomTableViewCell.swift */,
+				CE67780D24000CA700C47DBB /* NewCarViewController.swift */,
+				CE67780523FFD28000C47DBB /* MainViewController.swift */,
 				CE6D9B4523FE9C02000450AA /* Main.storyboard */,
 				CE6D9B4823FE9C08000450AA /* Assets.xcassets */,
 				CE6D9B4A23FE9C08000450AA /* LaunchScreen.storyboard */,
@@ -80,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6D9B5023FE9C08000450AA /* Build configuration list for PBXNativeTarget "CarTable" */;
 			buildPhases = (
+				D5F093CAD5D22274F9A6E74F /* [CP] Check Pods Manifest.lock */,
 				CE6D9B3823FE9C02000450AA /* Sources */,
 				CE6D9B3923FE9C02000450AA /* Frameworks */,
 				CE6D9B3A23FE9C02000450AA /* Resources */,
+				A6D13374E98EE9DAC3699BF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,15 +171,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A6D13374E98EE9DAC3699BF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarTable/Pods-CarTable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarTable/Pods-CarTable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarTable/Pods-CarTable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F093CAD5D22274F9A6E74F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarTable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE6D9B3823FE9C02000450AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE67780E24000CA700C47DBB /* NewCarViewController.swift in Sources */,
 				CE67780623FFD28000C47DBB /* MainViewController.swift in Sources */,
 				CE67780C23FFF7ED00C47DBB /* CarModel.swift in Sources */,
 				CE6D9B4023FE9C02000450AA /* AppDelegate.swift in Sources */,
 				CE67780A23FFE38A00C47DBB /* CustomTableViewCell.swift in Sources */,
+				CE3307632403CCB1000F1C2F /* CarsManager.swift in Sources */,
 				CE6D9B5623FFD1AA000450AA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +366,7 @@
 		};
 		CE6D9B5123FE9C08000450AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6534E47B466CBF9BBA1A7D0 /* Pods-CarTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +386,7 @@
 		};
 		CE6D9B5223FE9C08000450AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A0F91E11C5152B38156C9A9 /* Pods-CarTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
