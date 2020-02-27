@@ -70,7 +70,7 @@
 		CE6D9B3323FE9C01000450AA = {
 			isa = PBXGroup;
 			children = (
-				CE6D9B3E23FE9C02000450AA /* CarTable */,
+				CE6D9B3E23FE9C02000450AA /* CarProject */,
 				CE6D9B3D23FE9C02000450AA /* Products */,
 				C05F9CA3469CF3947FE10918 /* Pods */,
 				6BF7B0E88E52B93ABD4D0E69 /* Frameworks */,
@@ -85,22 +85,94 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE6D9B3E23FE9C02000450AA /* CarTable */ = {
+		CE6D9B3E23FE9C02000450AA /* CarProject */ = {
+			isa = PBXGroup;
+			children = (
+				CECDB8152406798600C13247 /* Application */,
+				CECDB81A24067C2600C13247 /* CarTable */,
+				CECDB819240679EA00C13247 /* Supporting files */,
+			);
+			path = CarProject;
+			sourceTree = "<group>";
+		};
+		CECDB8152406798600C13247 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CECDB8162406799200C13247 /* Model */,
+				CECDB8172406799B00C13247 /* View */,
+				CECDB818240679A100C13247 /* Controller */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CECDB8162406799200C13247 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CECDB8172406799B00C13247 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D9B4523FE9C02000450AA /* Main.storyboard */,
+				CE6D9B4A23FE9C08000450AA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CECDB818240679A100C13247 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				CE6D9B3F23FE9C02000450AA /* AppDelegate.swift */,
 				CE6D9B5523FFD1AA000450AA /* SceneDelegate.swift */,
-				CE67780B23FFF7EC00C47DBB /* CarModel.swift */,
-				CE3307622403CCB1000F1C2F /* CarsManager.swift */,
-				CE67780923FFE38A00C47DBB /* CustomTableViewCell.swift */,
-				CE67780D24000CA700C47DBB /* NewCarViewController.swift */,
-				CE67780523FFD28000C47DBB /* MainViewController.swift */,
-				CE6D9B4523FE9C02000450AA /* Main.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CECDB819240679EA00C13247 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
 				CE6D9B4823FE9C08000450AA /* Assets.xcassets */,
-				CE6D9B4A23FE9C08000450AA /* LaunchScreen.storyboard */,
 				CE6D9B4D23FE9C08000450AA /* Info.plist */,
 			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		CECDB81A24067C2600C13247 /* CarTable */ = {
+			isa = PBXGroup;
+			children = (
+				CECDB81B24067C3700C13247 /* Model */,
+				CECDB81C24067C4100C13247 /* View */,
+				CECDB81D24067C4B00C13247 /* Controller */,
+			);
 			path = CarTable;
+			sourceTree = "<group>";
+		};
+		CECDB81B24067C3700C13247 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE67780B23FFF7EC00C47DBB /* CarModel.swift */,
+				CE3307622403CCB1000F1C2F /* CarsManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CECDB81C24067C4100C13247 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE67780923FFE38A00C47DBB /* CustomTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CECDB81D24067C4B00C13247 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE67780D24000CA700C47DBB /* NewCarViewController.swift */,
+				CE67780523FFD28000C47DBB /* MainViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AX5Q84ZQGM;
-				INFOPLIST_FILE = CarTable/Info.plist;
+				INFOPLIST_FILE = "CarTable/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,7 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Denis.CarTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AX5Q84ZQGM;
-				INFOPLIST_FILE = CarTable/Info.plist;
+				INFOPLIST_FILE = "CarTable/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -400,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Denis.CarTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

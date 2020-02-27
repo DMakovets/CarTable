@@ -11,7 +11,7 @@ import RealmSwift
 
 class NewCarViewController: UITableViewController {
     
-    
+    var currentCar: Cars?
     var imageIsChanged = false
     
     @IBOutlet weak var carImage: UIImageView!
@@ -21,11 +21,12 @@ class NewCarViewController: UITableViewController {
     @IBOutlet weak var priceCar: UITextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         saveButton.isEnabled = false
-        super.viewDidLoad()
         tableView.tableFooterView = UIView()
         modelCar.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
     //MARK: Table view delegate
@@ -39,15 +40,44 @@ class NewCarViewController: UITableViewController {
             let photo = UIAlertAction(title: "Photo", style: .default) { (_) in
                 self.chooseImagePicker(source: .photoLibrary)
             }
+            
+            let sharePhoto = UIAlertAction(title: "Share", style: .default) { (_) in
+                self.sharedPhoto()
+            }
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+            
             actionSheet.addAction(camera)
             actionSheet.addAction(photo)
+            actionSheet.addAction(sharePhoto)
             actionSheet.addAction(cancel)
             present(actionSheet, animated: true)
             
         }else{
             view.endEditing(true)
         }
+    }
+    
+    private func setupEditScreen(){
+        if currentCar != nil{
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            guard let data = currentCar?.imageData, let image = UIImage(data:data) else {return}
+            carImage.image = image
+            carImage.contentMode = .scaleAspectFill
+            modelCar.text = currentCar?.model
+            markCar.text = currentCar?.mark
+            priceCar.text = currentCar?.price
+        }
+    }
+    
+    private func setupNavigationBar(){
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        navigationItem.leftBarButtonItem = nil
+        title = currentCar?.model
+        saveButton.isEnabled = true
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -74,7 +104,7 @@ extension NewCarViewController: UITextFieldDelegate {
         }
     }
     
-    func saveNewCar(){
+    func saveCar(){
         
         var image: UIImage?
         
@@ -85,7 +115,17 @@ extension NewCarViewController: UITextFieldDelegate {
         }
         let imageData = image?.pngData()
         let newCar = Cars(model: modelCar.text!, mark: markCar.text!, price: priceCar.text!, imageData: imageData)
-        CarsManager.saveObject(newCar)
+        if currentCar != nil {
+            try! realm.write {
+                currentCar?.model = newCar.model
+                currentCar?.mark = newCar.mark
+                currentCar?.price = newCar.price
+                currentCar?.imageData = newCar.imageData
+            }
+            
+        }else{
+            CarsManager.saveObject(newCar)
+        }
     }
 }
 
@@ -96,7 +136,7 @@ extension NewCarViewController: UIImagePickerControllerDelegate, UINavigationCon
     func chooseImagePicker(source: UIImagePickerController.SourceType){
         if UIImagePickerController.isSourceTypeAvailable(source){
             let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
@@ -108,6 +148,11 @@ extension NewCarViewController: UIImagePickerControllerDelegate, UINavigationCon
         carImage.clipsToBounds = true
         imageIsChanged = true
         dismiss(animated: true)
+    }
+    func sharedPhoto(){
+        guard let data = currentCar?.imageData, let image = UIImage(data:data) else {return}
+        let shareController = UIActivityViewController(activityItems: [image] , applicationActivities: nil)
+        present(shareController, animated: true,completion:  nil)
     }
 }
 

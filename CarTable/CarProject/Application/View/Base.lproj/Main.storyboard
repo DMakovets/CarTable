@@ -54,6 +54,7 @@
                                     <outlet property="makerLabel" destination="Yug-N5-mHQ" id="MRA-ez-2EW"/>
                                     <outlet property="markLabel" destination="WWC-WX-aNJ" id="Gtk-Rr-xQO"/>
                                     <outlet property="priceLabel" destination="ajg-GL-FQm" id="F74-fc-QCU"/>
+                                    <segue destination="IZ5-sM-0eX" kind="show" identifier="showDetail" id="oCS-jg-e6f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +63,12 @@
                             <outlet property="delegate" destination="Stu-Jc-heD" id="kSm-BE-J1i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Car" id="KQL-s6-pAv">
+                    <navigationItem key="navigationItem" title="My Car" largeTitleDisplayMode="never" id="KQL-s6-pAv">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="egE-H2-fey">
+                            <connections>
+                                <action selector="reversedSerting:" destination="Stu-Jc-heD" id="JXH-uS-3JZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hcF-Js-ioN">
                             <connections>
                                 <segue destination="M9h-P9-Gsx" kind="presentation" id="FwQ-yL-cOb"/>
@@ -70,6 +76,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="reversSortingButton" destination="egE-H2-fey" id="BWZ-fX-Z2C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6U-Tc-K24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +89,7 @@
             <objects>
                 <tableViewController id="IZ5-sM-0eX" customClass="NewCarViewController" customModule="CarTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OWd-fA-HW0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -95,7 +104,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-Gz-2ic">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,7 +229,7 @@
                             <outlet property="delegate" destination="IZ5-sM-0eX" id="PgB-BV-nrq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Car" id="s40-Z0-wY2">
+                    <navigationItem key="navigationItem" title="New Car" largeTitleDisplayMode="always" id="s40-Z0-wY2">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="S3U-dk-e0P">
                             <connections>
                                 <action selector="cancelAction:" destination="IZ5-sM-0eX" id="WbD-pZ-v0v"/>
@@ -243,14 +252,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsD-Tz-bv6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="SZp-pd-jQ7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2511.594202898551" y="213.61607142857142"/>
+            <point key="canvasLocation" x="1577" y="214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="unr-C0-Qh5">
             <objects>
                 <navigationController id="mV9-xJ-2sQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mzF-Bs-ti0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="mzF-Bs-ti0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -277,10 +286,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhg-6n-GPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="214"/>
+            <point key="canvasLocation" x="1577" y="-640"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oCS-jg-e6f"/>
+    </inferredMetricsTieBreakers>
 </document>

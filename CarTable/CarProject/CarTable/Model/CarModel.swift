@@ -20,7 +20,7 @@ class Cars: Object {
         self.model = model
         self.mark = mark
         self.price = price
-        self.imageData = imageData 
-        
+        self.imageData = imageData
     }
+    
 }
